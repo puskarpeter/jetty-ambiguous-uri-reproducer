@@ -10,5 +10,6 @@
 	<modules>
 		<module>jetty11</module>
 		<module>jetty12</module>
+		<module>jetty12-mvc</module>
 	</modules>
 </project>

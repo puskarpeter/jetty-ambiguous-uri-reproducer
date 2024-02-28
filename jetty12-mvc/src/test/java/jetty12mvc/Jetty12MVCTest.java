@@ -1,4 +1,4 @@
-package jetty12;
+package jetty12mvc;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -23,7 +23,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.not;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class Jetty12Test
+public class Jetty12MVCTest
 {
     @LocalServerPort
     private int port;
@@ -67,6 +67,8 @@ public class Jetty12Test
 //        };
 //    }
 
+
+    //By creating URI from URL we make sure that no additional encoding is performed; hence % will not become %25
     private URI newURI(UriConstruction uriConstruction) throws MalformedURLException, URISyntaxException {
         return switch (uriConstruction) {
             case SPRING, SPRING_NOENCODE, URI_DISTINCT_PARAMS, URI_SSP_PARAMS, URI_SINGLE_PARAM ->
